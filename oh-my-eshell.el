@@ -26,7 +26,7 @@
 ;;; Code:
 
 (defun oh-my-esh/add-sudo ()
-  "Takes the previous command entered into the eshell and appends sudo in front of it."
+  "Take the previous command entered into the eshell and append sudo in front of it."
   (insert (concat "sudo " (format "%s" (eshell-get-history 1)))))
 
 (defun sudo-find-file (file)
@@ -42,12 +42,12 @@
                (concat "/sudo:root@localhost:" file))))
 
 (defun oh-my-esh/rsync ()
-  "Adds aliases for commonly-used rsync commands."
+  "Add aliases for commonly-used rsync commands."
   (eshell/alias "rsync-copy" "rsync -avz --progress -h")
   (eshell/alias "rsync-move" "rsync -avz --progress -h --remove-source-files")
   (eshell/alias "rsync-update" "rsync -avzu --progress -h")
   (exhell/alias "rsync-synchronize" "rsync -avzu --delete --progress -h"))
 
-(provide 'oh-my-esh)
+(provide 'oh-my-eshell)
 
-;;; oh-my-esh.el ends here
+;;; oh-my-eshell.el ends here
